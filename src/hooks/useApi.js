@@ -1,9 +1,9 @@
-import { useMainContext } from "@src/context/MainContext.js";
+import { useMainContext } from "src/context/MainContext.js";
 import { useState } from "react";
 
 export default (apiFunc) => {
   const { loading, setLoading, errorMsg, setErrorMsg } = useMainContext();
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
 
   const request = async (params) => {
     setLoading(true);
@@ -21,6 +21,6 @@ export default (apiFunc) => {
     data,
     errorMsg,
     loading,
-    request,
+    request
   };
 };
