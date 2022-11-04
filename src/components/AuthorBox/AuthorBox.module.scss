@@ -1,0 +1,28 @@
+.author {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(var(--text-rgb), .15);
+  padding: 10px 15px;
+  border-radius: var(--radius-sm);
+  left: 0;
+  transition: all ease-in-out .2s;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    left: 3px;
+    cursor: pointer;
+    background-color: var(--light);
+  }
+
+  @media (min-width: 768px) {
+    padding: 20px 15px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
