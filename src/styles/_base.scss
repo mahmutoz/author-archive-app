@@ -23,8 +23,6 @@ html {
 }
 
 body {
-  display: grid;
-  place-content: center;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   background-color: var(--bg);
