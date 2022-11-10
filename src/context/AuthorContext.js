@@ -1,38 +1,38 @@
 import { createContext, useContext } from "react";
 import useApi from "src/hooks/useApi";
-import { UserService } from "src/api/services";
+import { AuthorService } from "src/api/services";
 import { useState, useEffect } from "react";
 
-const UserContext = createContext();
+const AuthorContext = createContext();
 
-export const UserProvider = ({ children }) => {
-  const getUsersApi = useApi(UserService.getUsers);
+export const AuthorProvider = ({ children }) => {
+  const getAuthorsApi = useApi(AuthorService.getAuthors);
   const [selectedOption, setSelectedOption] = useState(null);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    getUsersApi.request();
+    getAuthorsApi.request();
   }, []);
 
-  const getSearchUserResults = () => {
-    const userData = getUsersApi?.data;
-    return searchValue !== "" && userData
-      ? userData?.filter((user) =>
-          user.name.toLowerCase().includes(searchValue.toLowerCase())
+  const getSearchAuthorResults = () => {
+    const authorData = getAuthorsApi?.data;
+    return searchValue !== "" && authorData
+      ? authorData?.filter((author) =>
+          author.name.toLowerCase().includes(searchValue.toLowerCase())
         )
-      : userData;
+      : authorData;
   };
 
   const values = {
-    getUsersApi,
+    getAuthorsApi,
     selectedOption,
     setSelectedOption,
     searchValue,
     setSearchValue,
-    getSearchUserResults
+    getSearchAuthorResults
   };
 
-  return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
+  return <AuthorContext.Provider value={values}>{children}</AuthorContext.Provider>;
 };
 
-export const useUserContext = () => useContext(UserContext);
+export const useAuthorContext = () => useContext(AuthorContext);

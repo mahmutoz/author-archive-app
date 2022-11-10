@@ -4,16 +4,16 @@ import "src/styles/main.scss";
 import App from "src/App";
 import { BrowserRouter } from "react-router-dom";
 import { MainProvider } from "src/context/MainContext";
-import { UserProvider } from "src/context/UserContext";
+import { AuthorProvider } from "src/context/AuthorContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <MainProvider>
-        <UserProvider>
+        <AuthorProvider>
           <App />
-        </UserProvider>
+        </AuthorProvider>
       </MainProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import Select from "react-select";
 import styles from "src/components/SelectBox/SelectBox.module.scss";
-import { useUserContext } from "src/context/UserContext";
+import { useAuthorContext } from "src/context/AuthorContext";
+import { useNavigate } from "react-router-dom";
+import { routes } from "src/routes";
 
 const customStyles = {
   control: (styles, { isFocused }) => ({
@@ -30,24 +31,29 @@ const customStyles = {
 };
 
 const SelectBox = () => {
-  const { getUsersApi, selectedOption, setSelectedOption, setSearchValue } =
-    useUserContext();
+  const { getAuthorsApi, selectedOption, setSelectedOption, setSearchValue } =
+    useAuthorContext();
+  const { author } = routes;
+  const navigate = useNavigate();
 
   const formattedUser = () =>
-    getUsersApi?.data?.map((item) => {
+    getAuthorsApi?.data?.map((item) => {
       return { value: item.id, label: item.name };
     });
 
   return (
-    <Select
-      className={styles.select}
-      styles={customStyles}
-      defaultValue={selectedOption}
-      onChange={setSelectedOption}
-      onInputChange={(value) => setSearchValue(value)}
-      options={formattedUser()}
-      placeholder="Search Author..."
-    />
+    <>
+      <Select
+        className={styles.select}
+        styles={customStyles}
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        onInputChange={(value) => setSearchValue(value)}
+        options={formattedUser()}
+        placeholder="Search Author..."
+      />
+      {selectedOption && navigate(`${author.path}/${selectedOption?.value}`)}
+    </>
   );
 };
 

@@ -1,21 +1,21 @@
 import styles from "src/components/AuthorList/AuthorList.module.scss";
-import { useUserContext } from "src/context/UserContext";
+import { useAuthorContext } from "src/context/AuthorContext";
 import AuthorBox from "src/components/AuthorBox/AuthorBox";
 
 const AuthorList = () => {
-  const { getSearchUserResults } = useUserContext();
+  const { getSearchAuthorResults } = useAuthorContext();
 
-  const filteredData = getSearchUserResults();
+  const filteredData = getSearchAuthorResults();
 
   return (
     <section className={styles.list}>
       <ul>
         {filteredData?.length > 0 ? (
-          filteredData?.map((user) => (
+          filteredData?.map((author) => (
             <AuthorBox
-              key={user.username}
-              authorId={user.id}
-              authorFullName={user.name}
+              key={author.username}
+              authorId={author.id}
+              authorFullName={author.name}
             />
           ))
         ) : (

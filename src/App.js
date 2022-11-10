@@ -3,10 +3,10 @@ import Swal from "sweetalert2";
 import { useMainContext } from "src/context/MainContext";
 import Loading from "src/components/Loading/Loading";
 import { routes } from "src/routes";
-import MainLayout from "src/layouts/MainLayout";
+import { MainLayout, AuthorLayout } from "src/layouts";
 
 const App = () => {
-  const { error, homePage } = routes;
+  const { error, homePage, author } = routes;
   const { errorMsg } = useMainContext();
 
   return (
@@ -23,6 +23,9 @@ const App = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={homePage.element} path={homePage.path} exact />
+          <Route element={<AuthorLayout />}>
+            <Route element={author.element} path={author.dynamicPath} />
+          </Route>
         </Route>
         <Route element={error.element} path={error.path} />
       </Routes>

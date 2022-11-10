@@ -1,13 +1,13 @@
 import api from "src/api/client";
 
-const UserService = {
-  getUsers() {
+const AuthorService = {
+  getAuthors() {
     return api.fakeApiClient.get("/users");
   },
 
-  getUser(params) {
+  getAuthor(params) {
     return api.fakeApiClient.get("/users", { params: { ...params } });
   }
 };
 
-export default UserService;
+export default AuthorService;
