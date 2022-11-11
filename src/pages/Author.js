@@ -11,11 +11,11 @@ const Author = () => {
       <Title as={"h2"} className={"title center"}>
         Posts
       </Title>
-      <PostList authorId={+id} />
+      <PostList authorId={+id} itemsPerPage={4} />
       <Title as={"h2"} className={"title center"}>
         Albums
       </Title>
-      <AlbumList authorId={+id} />
+      <AlbumList authorId={+id} itemsPerPage={4} />
     </>
   );
 };

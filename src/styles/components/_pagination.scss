@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto 30px;
+
+  li {
+    border: 1px solid transparent;
+    transition: .2s border-color ease-in-out;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+
+    a {
+      display: inline-block;
+      padding: 10px 15px;
+    }
+
+    &.selected, &:hover {
+      border-color: rgba(var(--text-rgb), .3);
+    }
+
+    &.selected {
+      background-color: var(--bg-light);
+    }
+
+    &.disabled {
+      opacity: .4;
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 60px;
+  }
+}
