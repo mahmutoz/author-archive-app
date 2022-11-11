@@ -1,0 +1,36 @@
+.post {
+  width: 100%;
+  max-width: 280px;
+
+  img {
+    min-height: 157px;
+  }
+
+  h2 {
+    font-size: 17px;
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 13px;
+    margin-top: 10px;
+    color: rgba(var(--text-rgb), .7);
+  }
+
+  @media (min-width: 576px) {
+    width: calc(50% - var(--column-gap-md));
+  }
+
+  @media (min-width: 992px) {
+    width: calc(25% - var(--column-gap-md));
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+}

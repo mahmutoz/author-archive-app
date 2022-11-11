@@ -1,0 +1,6 @@
+.posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--row-gap-lg) var(--column-gap-md);
+}

@@ -1,9 +1,9 @@
 import { Outlet } from "react-router";
+import Title from "src/components/Title/Title";
 
 const AuthorLayout = () => {
   return (
     <>
-      <h2>Author Page</h2>
       <Outlet />
     </>
   );
