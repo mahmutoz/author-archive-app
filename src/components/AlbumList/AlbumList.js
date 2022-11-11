@@ -2,6 +2,8 @@ import useApi from "src/hooks/useApi";
 import { AlbumService } from "src/api/services";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import AlbumItem from "src/components/AlbumItem/AlbumItem";
+import styles from "src/components/AlbumList/AlbumList.module.scss";
 
 const AlbumList = ({ authorId }) => {
   const getAlbumApi = useApi(AlbumService.getAlbum);
@@ -11,9 +13,9 @@ const AlbumList = ({ authorId }) => {
   }, []);
 
   return (
-    <ul>
+    <ul className={styles.albums}>
       {getAlbumApi?.data?.map((album) => (
-        <li key={album.id}>{album.title}</li>
+        <AlbumItem key={album.id} albumTitle={album.title}></AlbumItem>
       ))}
     </ul>
   );

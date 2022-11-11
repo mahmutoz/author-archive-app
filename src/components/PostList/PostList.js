@@ -2,7 +2,7 @@ import useApi from "src/hooks/useApi";
 import { PostService } from "src/api/services";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import Post from "src/components/Post/Post";
+import PostItem from "src/components/PostItem/PostItem";
 import styles from "src/components/PostList/PostList.module.scss";
 
 const PostList = ({ authorId }) => {
@@ -15,7 +15,7 @@ const PostList = ({ authorId }) => {
   return (
     <ul className={styles.posts}>
       {getPostApi?.data?.map((post) => (
-        <Post key={post.id} postTitle={post.title} postContent={post.body} />
+        <PostItem key={post.id} postTitle={post.title} postContent={post.body} />
       ))}
     </ul>
   );

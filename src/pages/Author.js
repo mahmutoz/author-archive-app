@@ -1,7 +1,7 @@
 import PostList from "src/components/PostList/PostList";
 import { useParams } from "react-router-dom";
-import AlbumList from "../components/AlbumList/AlbumList";
-import Title from "../components/Title/Title";
+import AlbumList from "src/components/AlbumList/AlbumList";
+import Title from "src/components/Title/Title";
 
 const Author = () => {
   const { id } = useParams();

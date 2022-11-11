@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import styles from "src/components/Post/Post.module.scss";
+import styles from "src/components/PostItem/PostItem.module.scss";
 
-const Post = ({ postTitle, postContent }) => {
+const PostItem = ({ postTitle, postContent }) => {
   return (
     <li className={styles.post}>
       <img
@@ -16,9 +16,9 @@ const Post = ({ postTitle, postContent }) => {
   );
 };
 
-export default Post;
+export default PostItem;
 
-Post.propTypes = {
+PostItem.propTypes = {
   postTitle: PropTypes.string.isRequired,
   postContent: PropTypes.string.isRequired
 };
