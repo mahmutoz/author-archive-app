@@ -2,9 +2,46 @@
   margin-top: 15px;
   margin-bottom: 15px;
   color: var(--secondary);
-  text-align: center;
 }
 
 .center {
-  margin-top: 15px;
+  text-align: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
 }
