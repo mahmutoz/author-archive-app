@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 
-const ArchiveLayout = () => {
+const PostLayout = () => {
   return (
     <>
       <Outlet />
@@ -8,4 +8,4 @@ const ArchiveLayout = () => {
   );
 };
 
-export default ArchiveLayout;
+export default PostLayout;

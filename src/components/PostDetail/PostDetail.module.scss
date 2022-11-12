@@ -1,0 +1,37 @@
+.post {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &__img {
+    max-width: 400px;
+    margin: 10px auto 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-lg);
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    font-size: 14px;
+    color: rgba(var(--text-rgb), .7);
+    font-weight: 500;
+  }
+
+  @media (min-width: 992px) {
+    &__content {
+      font-size: 17px;
+    }
+
+    &__header {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+

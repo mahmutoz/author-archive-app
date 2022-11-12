@@ -23,7 +23,6 @@ html {
 }
 
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   background-color: var(--bg);
   color: var(--text);
@@ -41,7 +40,8 @@ li {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 h1,

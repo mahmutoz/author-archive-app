@@ -1,4 +1,4 @@
-import { Error, Home, Author } from "src/pages";
+import { Error, Home, Author, Post } from "src/pages";
 
 export const routes = {
   homePage: {
@@ -11,6 +11,12 @@ export const routes = {
     dynamicPath: "/author/:id",
     title: "Author",
     element: <Author />
+  },
+  post: {
+    path: "/post",
+    dynamicPath: "/post/:id",
+    title: "Post",
+    element: <Post />
   },
   error: {
     path: "*",

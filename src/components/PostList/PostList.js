@@ -28,7 +28,12 @@ const PostList = ({ authorId, itemsPerPage }) => {
     <>
       <ul className={styles.posts}>
         {currentItems?.map((post) => (
-          <PostItem key={post.id} postTitle={post.title} postContent={post.body} />
+          <PostItem
+            key={post.id}
+            postId={post.id}
+            postTitle={post.title}
+            postContent={post.body}
+          />
         ))}
       </ul>
       <ReactPaginate
