@@ -21,7 +21,6 @@ const AuthorList = () => {
               authorPhone={author.phone}
               authorWebsite={author.website}
               authorAddress={author.address.geo}
-              authorCompany={author.company.name}
             />
           ))}
         </ul>
