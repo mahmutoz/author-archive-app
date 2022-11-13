@@ -44,6 +44,8 @@
   }
 
   @media (min-width: 992px) {
+    border-radius: var(--radius-lg);
+
     &:not(:last-child) {
       margin-bottom: 20px;
     }

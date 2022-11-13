@@ -1,0 +1,10 @@
+.photo {
+
+  &__btn {
+    cursor: pointer;
+
+    img {
+      border-radius: var(--radius-md);
+    }
+  }
+}

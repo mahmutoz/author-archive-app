@@ -1,8 +1,8 @@
 import api from "src/api/client";
 
 const PhotoService = {
-  getPhotos() {
-    return api.fakeApiClient.get("/photos");
+  getPhotos(params) {
+    return api.fakeApiClient.get("/photos", { params: { ...params } });
   }
 };
 

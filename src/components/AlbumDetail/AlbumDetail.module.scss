@@ -1,0 +1,9 @@
+.photos {
+  display: flex;
+  justify-content: center;
+  column-gap: var(--column-gap-md);
+  row-gap: var(--row-gap-md);
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

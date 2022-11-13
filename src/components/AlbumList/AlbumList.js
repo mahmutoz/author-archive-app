@@ -28,7 +28,11 @@ const AlbumList = ({ authorId, itemsPerPage }) => {
     <>
       <ul className={styles.albums}>
         {currentItems?.map((album) => (
-          <AlbumItem key={album.id} albumTitle={album.title}></AlbumItem>
+          <AlbumItem
+            key={album.id}
+            albumId={album.id}
+            albumTitle={album.title}
+          ></AlbumItem>
         ))}
       </ul>
       <ReactPaginate
