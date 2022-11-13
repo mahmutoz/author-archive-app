@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import AlbumItem from "src/components/AlbumItem/AlbumItem";
 import styles from "src/components/AlbumList/AlbumList.module.scss";
 import ReactPaginate from "react-paginate";
+import EmptyData from "src/components/EmptyData/EmptyData";
 
 const AlbumList = ({ authorId, itemsPerPage }) => {
   const getAlbumApi = useApi(AlbumService.getAlbum);
@@ -26,25 +27,31 @@ const AlbumList = ({ authorId, itemsPerPage }) => {
 
   return (
     <>
-      <ul className={styles.albums}>
-        {currentItems?.map((album) => (
-          <AlbumItem
-            key={album.id}
-            albumId={album.id}
-            albumTitle={album.title}
-          ></AlbumItem>
-        ))}
-      </ul>
-      <ReactPaginate
-        className="pagination"
-        breakLabel="..."
-        nextLabel=">"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={2}
-        pageCount={pageCount}
-        previousLabel="<"
-        renderOnZeroPageCount={null}
-      />
+      {currentItems?.length > 0 ? (
+        <>
+          <ul className={styles.albums}>
+            {currentItems?.map((album) => (
+              <AlbumItem
+                key={album.id}
+                albumId={album.id}
+                albumTitle={album.title}
+              ></AlbumItem>
+            ))}
+          </ul>
+          <ReactPaginate
+            className="pagination"
+            breakLabel="..."
+            nextLabel=">"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={2}
+            pageCount={pageCount}
+            previousLabel="<"
+            renderOnZeroPageCount={null}
+          />
+        </>
+      ) : (
+        <EmptyData>No Album</EmptyData>
+      )}
     </>
   );
 };

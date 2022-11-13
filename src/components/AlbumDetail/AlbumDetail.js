@@ -4,6 +4,7 @@ import useApi from "src/hooks/useApi";
 import { PhotoService } from "src/api/services";
 import { useEffect } from "react";
 import Photo from "src/components/Photo/Photo";
+import EmptyData from "src/components/EmptyData/EmptyData";
 
 const AlbumDetail = ({ albumId }) => {
   const getPhotosApi = useApi(PhotoService.getPhotos);
@@ -21,17 +22,23 @@ const AlbumDetail = ({ albumId }) => {
   });
 
   return (
-    <ul className={styles.photos}>
-      {photoData?.map((photo, index) => (
-        <Photo
-          key={photo.id}
-          imageIndex={index}
-          allImage={images}
-          thumbnailUrl={photo.thumbnailUrl}
-          imgTitle={photo.title}
-        />
-      ))}
-    </ul>
+    <>
+      {photoData?.length > 0 ? (
+        <ul className={styles.photos}>
+          {photoData?.map((photo, index) => (
+            <Photo
+              key={photo.id}
+              imageIndex={index}
+              allImage={images}
+              thumbnailUrl={photo.thumbnailUrl}
+              imgTitle={photo.title}
+            />
+          ))}
+        </ul>
+      ) : (
+        <EmptyData>No Author Info</EmptyData>
+      )}
+    </>
   );
 };
 

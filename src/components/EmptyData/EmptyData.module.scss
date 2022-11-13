@@ -1,0 +1,49 @@
+.data {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 1px;
+      background-color: rgba(var(--bg-secondary-rgb), .4);
+      top: 50%;
+      left: -15px;
+      transform: translateY(-50%);
+    }
+
+    &:after {
+      left: initial;
+      right: -15px;
+    }
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    p {
+      padding: 15px 30px;
+      font-size: 20px;
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}

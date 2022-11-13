@@ -1,19 +1,26 @@
 import PropTypes from "prop-types";
 import CommentItem from "src/components/CommentItem/CommentItem";
 import styles from "src/components/CommentList/CommentList.module.scss";
+import EmptyData from "src/components/EmptyData/EmptyData";
 
 const CommentList = ({ commentsData }) => {
   return (
-    <ul className={styles.comments}>
-      {commentsData?.map((comment) => (
-        <CommentItem
-          key={comment.id}
-          commentTopic={comment.name}
-          commentContent={comment.body}
-          commentEmail={comment.email}
-        />
-      ))}
-    </ul>
+    <>
+      {commentsData?.length > 0 ? (
+        <ul className={styles.comments}>
+          {commentsData?.map((comment) => (
+            <CommentItem
+              key={comment.id}
+              commentTopic={comment.name}
+              commentContent={comment.body}
+              commentEmail={comment.email}
+            />
+          ))}
+        </ul>
+      ) : (
+        <EmptyData>No Comment</EmptyData>
+      )}
+    </>
   );
 };
 

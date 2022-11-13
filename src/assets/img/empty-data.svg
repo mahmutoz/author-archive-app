@@ -1,0 +1,26 @@
+<svg
+        width="24"
+        height="24"
+        viewBox="0 0 53 54"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <rect
+            width="53"
+            height="54"
+            rx="26.5"
+            fill="#EC684B"
+    />
+    <path
+            d="M19.5763 33.9238L33.4238 20.0763"
+            stroke="white"
+            stroke-width="4"
+            stroke-linecap="round"
+    />
+    <path
+            d="M19.5763 20.0762L33.4238 33.9237"
+            stroke="white"
+            stroke-width="4"
+            stroke-linecap="round"
+    />
+</svg>
