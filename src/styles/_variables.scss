@@ -22,7 +22,11 @@
   --bg-light: #F5F7F6;
   --bg-warning: #FFBE2E;
 
+  // Gradient Colors
+  --gradient-primary: linear-gradient(to right, rgba(var(--bg-primary-rgb), .7), rgba(var(--bg-secondary-rgb), .7));
+
   // Radius
+  --radius-none: 0;
   --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 6px;

@@ -17,6 +17,11 @@ const AuthorList = () => {
               key={author.username}
               authorId={author.id}
               authorFullName={author.name}
+              authorEmail={author.email}
+              authorPhone={author.phone}
+              authorWebsite={author.website}
+              authorAddress={author.address.geo}
+              authorCompany={author.company.name}
             />
           ))}
         </ul>

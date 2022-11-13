@@ -1,0 +1,51 @@
+.social {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  li {
+    position: relative;
+
+    a {
+      display: inline-block;
+      background-color: rgba(var(--bg-primary-rgb), .5);
+      border-radius: var(--radius-md);
+      margin-left: 5px;
+      margin-right: 5px;
+      overflow: hidden;
+      transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s;
+      padding: 10px;
+
+      &:hover {
+        transform: rotate(-90deg);
+        border-radius: var(--radius-full) var(--radius-full) var(--radius-none) var(--radius-full) ;
+
+        img {
+          transform: rotate(90deg);
+        }
+      }
+
+      img {
+        transition: transform 0.2s linear 0s;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 35px;
+
+    li {
+      margin-left: 8px;
+      margin-right: 8px;
+
+      a {
+        padding: 12px;
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}

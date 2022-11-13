@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import avatar from "src/assets/img/avatar.svg";
+import AvatarImage from "src/assets/img/avatar.svg";
 
 const Avatar = ({ src, alt, width, height }) => {
   return (
     <img
-      src={src || avatar}
+      src={src || AvatarImage}
       alt={alt || "avatar"}
       width={width || 72}
       height={height || 72}
@@ -15,7 +15,7 @@ const Avatar = ({ src, alt, width, height }) => {
 export default Avatar;
 
 Avatar.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   alt: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number
