@@ -1,6 +1,7 @@
 import Avatar from "src/components/Avatar/Avatar";
 import Title from "src/components/Title/Title";
 import styles from "src/components/CommentItem/CommentItem.module.scss";
+import PropTypes from "prop-types";
 
 const CommentItem = ({ commentTopic, commentContent, commentEmail }) => {
   return (
@@ -22,3 +23,9 @@ const CommentItem = ({ commentTopic, commentContent, commentEmail }) => {
 };
 
 export default CommentItem;
+
+CommentItem.propTypes = {
+  commentTopic: PropTypes.string.isRequired,
+  commentContent: PropTypes.string.isRequired,
+  commentEmail: PropTypes.string.isRequired
+};
